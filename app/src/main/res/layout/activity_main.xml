@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/textInputIntendedNumber"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+    tools:context=".ui.activities.MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="answerGuessNumber"
+        android:text="@string/guess_the_number"
+        app:layout_constraintEnd_toEndOf="@+id/textInputGuessNumber"
+        app:layout_constraintStart_toStartOf="@+id/textInputGuessNumber"
+        app:layout_constraintTop_toBottomOf="@+id/textGuessMessage" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputGuessNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/textGameRules"
+        app:layout_constraintStart_toStartOf="@+id/textGameRules"
+        app:layout_constraintTop_toBottomOf="@+id/textGameRules">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textGuessNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/main_page_text_input_hint"
+            android:inputType="number|numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textGameRules"
+        android:layout_width="276dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/game_rules"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textGuessMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/textInputGuessNumber"
+        app:layout_constraintStart_toStartOf="@+id/textInputGuessNumber"
+        app:layout_constraintTop_toBottomOf="@+id/textInputGuessNumber" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
